@@ -1,0 +1,29 @@
+name: laughter-detection
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.9
+  - pip=23.3.1
+  - flask=2.3.3
+  - flask-sqlalchemy=3.1.1
+  - flask-login=0.6.2
+  - werkzeug=2.3.7
+  - numpy=1.24.3
+  - librosa=0.10.1
+  - python-dotenv=1.0.0
+  - pydub=0.25.1
+  - resampy=0.4.2
+  - pytorch>=2.2.0
+  - torchaudio>=2.2.0
+  - ipykernel
+  - pip:
+    - tensorflow==2.16.1
+    - tensorflow-hub==0.16.1
+    - tensorflow-io-gcs-filesystem==0.31.0
+    - protobuf==4.21.12
+    - h5py==3.8.0
+    - keras==2.13.1
+    - soundfile==0.12.1
+ 

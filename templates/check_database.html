@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Database Entries</h2>
+    <p>Total Highlights: {{ total_highlights }}</p>
+    
+    {% for filename, highlights in files_dict.items() %}
+    <div class="card mb-3">
+        <div class="card-header">
+            <h5>{{ filename }}</h5>
+            <small>{{ highlights|length }} highlights</small>
+        </div>
+        <div class="card-body">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Score</th>
+                        <th>Created</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for h in highlights %}
+                    <tr>
+                        <td>{{ "%.2f"|format(h.timestamp) }}s</td>
+                        <td>{{ "%.4f"|format(h.score) }}</td>
+                        <td>{{ h.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %} 
