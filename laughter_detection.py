@@ -61,7 +61,7 @@ class LaughterDetector:
         # Configuration
         self.chunk_duration = 0.96  # YAMNet's native segment length
         self.overlap_ratio = 0.5    # 50% overlap between segments
-        self.min_score = 1e-5       # Threshold for detection
+        self.min_score = 1e-2       # Threshold for detection
         self.sample_rate = 16000    # Required by YAMNet
         self.supported_formats = {'.wav', '.mp3', '.ogg', '.flac', '.m4a'}
         
@@ -100,6 +100,7 @@ class LaughterDetector:
         try:
             # Sort segments by start time
             segments.sort(key=lambda x: x.start_time)
+            print(f"{len(segments)} segments before merging")
             
             merged = []
             current = segments[0]
@@ -107,19 +108,31 @@ class LaughterDetector:
             for next_seg in segments[1:]:
                 # If segments overlap and have similar scores (within 0.2)
                 if (next_seg.start_time <= current.end_time and 
-                    abs(next_seg.score - current.score) < 0.2):
+                    abs(next_seg.score - current.score) < 1e-7):
                     # Merge segments
                     current = LaughterSegment(
                         start_time=current.start_time,
                         end_time=max(current.end_time, next_seg.end_time),
                         score=(current.score + next_seg.score) / 2
                     )
+                    print(f"Merged segments: {current.start_time} - {current.end_time} (score: {current.score})")
                 else:
                     merged.append(current)
                     current = next_seg
             
             merged.append(current)
-            return merged
+
+            #Sort the merged segments by score
+            print(f"{len(merged)} segments before sorting")
+            merged.sort(key=lambda x: x.score, reverse=True)
+            print(f"{len(merged)} segments after sorting")
+
+            # If more than 5 segments, keep only top 5 by score
+            if len(merged) > 5:
+                highlights = merged[:5]
+            else:
+                highlights = merged[:len(merged) - 1]
+            return highlights
             
         except Exception as e:
             self.logger.error(f"Error merging segments: {str(e)}")
@@ -182,17 +195,17 @@ class LaughterDetector:
                 laughter_score = float(np.mean(scores[:, self.laughter_class_index]))
 
                 print(laughter_score)
+                # Store all segments with their scores
+                start_time = start_sample / self.sample_rate
+                end_time = end_sample / self.sample_rate
+                segments.append(LaughterSegment(
+                    start_time=start_time,
+                    end_time=end_time, 
+                    score=laughter_score
+                ))
+                self.logger.info(f"Segment analyzed: {start_time:.2f}s - {end_time:.2f}s (score: {laughter_score:.4f})")
                 
-                if laughter_score > self.min_score:
-                    start_time = start_sample / self.sample_rate
-                    end_time = end_sample / self.sample_rate
-                    segments.append(LaughterSegment(
-                        start_time=start_time,
-                        end_time=end_time,
-                        score=laughter_score
-                    ))
-                    self.logger.debug(f"Laughter detected: {start_time:.2f}s - {end_time:.2f}s (score: {laughter_score:.4f})")
-            
+                # 
             return self.merge_overlapping_segments(segments)
             
         except Exception as e:
@@ -360,7 +373,7 @@ if __name__ == "__main__":
     try:
         # Create a singleton instance
         detector = LaughterDetector()
-        results = detector.process_audio("files\laughter.wav")
+        results = detector.process_audio("files\shraya_test.wav")
         #detector.process_audio_events("files\laughter.wav")
         print(results)
        
