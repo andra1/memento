@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07899E6CC1114CBF958835DA /* AuthSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5608E9249BF54227299530C6 /* AuthSessionTests.swift */; };
+		11F295B1449F5984F20C6A6F /* LaughterDetectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC48BA241D3BE5F58C26B8 /* LaughterDetectionService.swift */; };
+		13FD6D52694565C594DED3DB /* AuthSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D087684EAECF0772474473E /* AuthSession.swift */; };
+		146F23CCA610609CE533B478 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFED36D5BC1C052EC61354E /* SettingsView.swift */; };
+		255DD00F6B30FC53439F4416 /* LaughterEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A12C991878034A32CF12A2 /* LaughterEvent.swift */; };
+		2B2ABD3FB2C0F1963E5B5E45 /* LaughterMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098855BC89F7360331658A6F /* LaughterMarker.swift */; };
+		3B1BBB2F445A7254A75CD592 /* ClipExtractionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295C81F9B6A54CF0ED5B35D7 /* ClipExtractionService.swift */; };
+		44C59EBF0AC51B56059A1CC2 /* FlashbackGenerationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493544C5728D6559CD9E571 /* FlashbackGenerationServiceTests.swift */; };
+		4701162D41C7182ADBA8B5AF /* MementoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C842F2382CBAE9ACE8ABCF /* MementoApp.swift */; };
+		571DB3B25911BDE34ED456C9 /* RecorderViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B957F75D4674C44DF1F590E8 /* RecorderViewModelTests.swift */; };
+		5908ABF7B662EC252A1288B0 /* HighlightWindowBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAE38BE06A7BF88F272125A /* HighlightWindowBuilderTests.swift */; };
+		5935E7CFBE80C7A0616ACAA0 /* FlashbackOrchestratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23734B7CB4D3F7A42EE57886 /* FlashbackOrchestratorTests.swift */; };
+		5E8A06E57C697FC4086A70BC /* HighlightClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213870536375E838AEB6ABEB /* HighlightClip.swift */; };
+		687BFA56F70EF2A8419B365E /* FlashbackOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FA51635ED8538116AD3BC1 /* FlashbackOrchestrator.swift */; };
+		80A3A2A17332713C0A8C34FB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39713429366EABB0F7840A4E /* RootView.swift */; };
+		9A7FCD5CD42F8EA63FF8DC3D /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F951B45216F4B48E3E1269D /* UserSettings.swift */; };
+		AE14040713C8C06523A0A0DF /* RecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6881DFF50047A761FE6CC33 /* RecorderView.swift */; };
+		BDBEC3C65CD151AD63803671 /* AppFileStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF3F685DCDA348BD30BA936 /* AppFileStoreTests.swift */; };
+		C1A4D7560173B886AED4857B /* RecorderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233984DFF9FC076163C6AF10 /* RecorderViewModel.swift */; };
+		C245D4F48B1FE0E13CECB4A8 /* ModelURLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B301162A305CFC3FDFAD9D3E /* ModelURLTests.swift */; };
+		C7A67EA8448A6635FE925322 /* AudioPlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E2545E20F7351F7925FCB6 /* AudioPlaybackController.swift */; };
+		C8B7B4C49556118FDD83E38E /* FlashbackGenerationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503B190B18709654FE62CB4C /* FlashbackGenerationService.swift */; };
+		CCA8490820DB1EAB47DE574A /* AppFileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D9909E9245B749725830A /* AppFileStore.swift */; };
+		D25D24BA01EF7679F6F3D6A6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9494BCAFE2CA6E174283B4 /* HomeView.swift */; };
+		DC06CA56FFBBF501CCF1E12C /* NotificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610C7EEBCB7E350C3970049 /* NotificationCoordinator.swift */; };
+		DCDF009C8C071B657B18BA5B /* HighlightsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A769ED559E7B1D96B9487052 /* HighlightsListView.swift */; };
+		DD82B913A1BDFA7777E5C1AA /* AuthGateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92A536451F8DAA2F9002D85 /* AuthGateView.swift */; };
+		E05022FFD1CACCB07295C7B6 /* AudioRecordingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940AD1A39AB97C66B18221E8 /* AudioRecordingService.swift */; };
+		E6FC7C5F96CF9E0B21614CC7 /* HighlightWindowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843D743CE1555C18E7FA606 /* HighlightWindowBuilder.swift */; };
+		EA17502C909583FCBC981BAE /* RecordingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A488088C373CB67040E034 /* RecordingSession.swift */; };
+		F1C13B0828C2AE48C03970CF /* TestModelStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716521181C57BA7087591258 /* TestModelStack.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B49E0421234475EC7CB58076 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E4A5611A3928C39F12C12C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7DBFFB6525C141D51791A22D;
+			remoteInfo = Memento;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0843D743CE1555C18E7FA606 /* HighlightWindowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightWindowBuilder.swift; sourceTree = "<group>"; };
+		098855BC89F7360331658A6F /* LaughterMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaughterMarker.swift; sourceTree = "<group>"; };
+		0F15F89FBA7A9B167C552FE9 /* Memento.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Memento.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1610C7EEBCB7E350C3970049 /* NotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCoordinator.swift; sourceTree = "<group>"; };
+		1E511E3B209768D41C8E0C27 /* MementoTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MementoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		213870536375E838AEB6ABEB /* HighlightClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightClip.swift; sourceTree = "<group>"; };
+		233984DFF9FC076163C6AF10 /* RecorderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderViewModel.swift; sourceTree = "<group>"; };
+		23734B7CB4D3F7A42EE57886 /* FlashbackOrchestratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashbackOrchestratorTests.swift; sourceTree = "<group>"; };
+		295C81F9B6A54CF0ED5B35D7 /* ClipExtractionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipExtractionService.swift; sourceTree = "<group>"; };
+		2BAE38BE06A7BF88F272125A /* HighlightWindowBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightWindowBuilderTests.swift; sourceTree = "<group>"; };
+		3493544C5728D6559CD9E571 /* FlashbackGenerationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashbackGenerationServiceTests.swift; sourceTree = "<group>"; };
+		39713429366EABB0F7840A4E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		3D087684EAECF0772474473E /* AuthSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSession.swift; sourceTree = "<group>"; };
+		3EF3F685DCDA348BD30BA936 /* AppFileStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFileStoreTests.swift; sourceTree = "<group>"; };
+		49FA51635ED8538116AD3BC1 /* FlashbackOrchestrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashbackOrchestrator.swift; sourceTree = "<group>"; };
+		503B190B18709654FE62CB4C /* FlashbackGenerationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashbackGenerationService.swift; sourceTree = "<group>"; };
+		5608E9249BF54227299530C6 /* AuthSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSessionTests.swift; sourceTree = "<group>"; };
+		58A12C991878034A32CF12A2 /* LaughterEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaughterEvent.swift; sourceTree = "<group>"; };
+		5ADC48BA241D3BE5F58C26B8 /* LaughterDetectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaughterDetectionService.swift; sourceTree = "<group>"; };
+		5DFED36D5BC1C052EC61354E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		6F9494BCAFE2CA6E174283B4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		716521181C57BA7087591258 /* TestModelStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModelStack.swift; sourceTree = "<group>"; };
+		7F951B45216F4B48E3E1269D /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		8D3D9909E9245B749725830A /* AppFileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFileStore.swift; sourceTree = "<group>"; };
+		940AD1A39AB97C66B18221E8 /* AudioRecordingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingService.swift; sourceTree = "<group>"; };
+		A769ED559E7B1D96B9487052 /* HighlightsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsListView.swift; sourceTree = "<group>"; };
+		B301162A305CFC3FDFAD9D3E /* ModelURLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelURLTests.swift; sourceTree = "<group>"; };
+		B957F75D4674C44DF1F590E8 /* RecorderViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderViewModelTests.swift; sourceTree = "<group>"; };
+		C6881DFF50047A761FE6CC33 /* RecorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderView.swift; sourceTree = "<group>"; };
+		C7A488088C373CB67040E034 /* RecordingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingSession.swift; sourceTree = "<group>"; };
+		E0C842F2382CBAE9ACE8ABCF /* MementoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoApp.swift; sourceTree = "<group>"; };
+		F92A536451F8DAA2F9002D85 /* AuthGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGateView.swift; sourceTree = "<group>"; };
+		F9E2545E20F7351F7925FCB6 /* AudioPlaybackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlaybackController.swift; sourceTree = "<group>"; };
+		FA984B3F13A44FF57FC1744C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		05A774BEB307E8CB36B7B8F3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3D087684EAECF0772474473E /* AuthSession.swift */,
+				E0C842F2382CBAE9ACE8ABCF /* MementoApp.swift */,
+				1610C7EEBCB7E350C3970049 /* NotificationCoordinator.swift */,
+				39713429366EABB0F7840A4E /* RootView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		10A7CF48B0EF75FABA9837FB = {
+			isa = PBXGroup;
+			children = (
+				BE92C83EE4B39BFECB08E53B /* Memento */,
+				16F7D982C38CC79F5FE39A90 /* MementoTests */,
+				45950F850629A2F50DBAA350 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		16F7D982C38CC79F5FE39A90 /* MementoTests */ = {
+			isa = PBXGroup;
+			children = (
+				3EF3F685DCDA348BD30BA936 /* AppFileStoreTests.swift */,
+				5608E9249BF54227299530C6 /* AuthSessionTests.swift */,
+				3493544C5728D6559CD9E571 /* FlashbackGenerationServiceTests.swift */,
+				23734B7CB4D3F7A42EE57886 /* FlashbackOrchestratorTests.swift */,
+				2BAE38BE06A7BF88F272125A /* HighlightWindowBuilderTests.swift */,
+				B301162A305CFC3FDFAD9D3E /* ModelURLTests.swift */,
+				B957F75D4674C44DF1F590E8 /* RecorderViewModelTests.swift */,
+				716521181C57BA7087591258 /* TestModelStack.swift */,
+			);
+			path = MementoTests;
+			sourceTree = "<group>";
+		};
+		282BEBD48B91BDC20565B4DD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5DFED36D5BC1C052EC61354E /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		45950F850629A2F50DBAA350 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0F15F89FBA7A9B167C552FE9 /* Memento.app */,
+				1E511E3B209768D41C8E0C27 /* MementoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48B676EAE69512A4D85FB123 /* Highlights */ = {
+			isa = PBXGroup;
+			children = (
+				A769ED559E7B1D96B9487052 /* HighlightsListView.swift */,
+			);
+			path = Highlights;
+			sourceTree = "<group>";
+		};
+		51FAA34796F9F665A27AD0FF /* Recording */ = {
+			isa = PBXGroup;
+			children = (
+				C6881DFF50047A761FE6CC33 /* RecorderView.swift */,
+				233984DFF9FC076163C6AF10 /* RecorderViewModel.swift */,
+			);
+			path = Recording;
+			sourceTree = "<group>";
+		};
+		5D6C155A7AE221ED044836BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				213870536375E838AEB6ABEB /* HighlightClip.swift */,
+				58A12C991878034A32CF12A2 /* LaughterEvent.swift */,
+				C7A488088C373CB67040E034 /* RecordingSession.swift */,
+				7F951B45216F4B48E3E1269D /* UserSettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		96BCDF8C90C878610124A18F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				E8E20C78D316201562AA918B /* Auth */,
+				48B676EAE69512A4D85FB123 /* Highlights */,
+				AE611084398F7446712FDA6B /* Home */,
+				51FAA34796F9F665A27AD0FF /* Recording */,
+				282BEBD48B91BDC20565B4DD /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		99E6A9F196CA63518144557F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				0843D743CE1555C18E7FA606 /* HighlightWindowBuilder.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		AE611084398F7446712FDA6B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6F9494BCAFE2CA6E174283B4 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BE92C83EE4B39BFECB08E53B /* Memento */ = {
+			isa = PBXGroup;
+			children = (
+				FA984B3F13A44FF57FC1744C /* Info.plist */,
+				05A774BEB307E8CB36B7B8F3 /* App */,
+				99E6A9F196CA63518144557F /* Domain */,
+				96BCDF8C90C878610124A18F /* Features */,
+				5D6C155A7AE221ED044836BA /* Models */,
+				DBAB773713930AEBE24C4C2E /* Services */,
+				F4689BE22AA20D47082C0011 /* Shared */,
+			);
+			path = Memento;
+			sourceTree = "<group>";
+		};
+		DBAB773713930AEBE24C4C2E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8D3D9909E9245B749725830A /* AppFileStore.swift */,
+				F9E2545E20F7351F7925FCB6 /* AudioPlaybackController.swift */,
+				940AD1A39AB97C66B18221E8 /* AudioRecordingService.swift */,
+				295C81F9B6A54CF0ED5B35D7 /* ClipExtractionService.swift */,
+				503B190B18709654FE62CB4C /* FlashbackGenerationService.swift */,
+				49FA51635ED8538116AD3BC1 /* FlashbackOrchestrator.swift */,
+				5ADC48BA241D3BE5F58C26B8 /* LaughterDetectionService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E8E20C78D316201562AA918B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				F92A536451F8DAA2F9002D85 /* AuthGateView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		F4689BE22AA20D47082C0011 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				098855BC89F7360331658A6F /* LaughterMarker.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7DBFFB6525C141D51791A22D /* Memento */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBF22FEFD5380AD9FAE8434E /* Build configuration list for PBXNativeTarget "Memento" */;
+			buildPhases = (
+				66B203B4E5B328834217353A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Memento;
+			packageProductDependencies = (
+			);
+			productName = Memento;
+			productReference = 0F15F89FBA7A9B167C552FE9 /* Memento.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA36845DEDFB695B314AAB43 /* MementoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF51F97FC212804BB4E6DC5C /* Build configuration list for PBXNativeTarget "MementoTests" */;
+			buildPhases = (
+				D8F120409238A9AB19775401 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80499A894C8364CF92AF64D2 /* PBXTargetDependency */,
+			);
+			name = MementoTests;
+			packageProductDependencies = (
+			);
+			productName = MementoTests;
+			productReference = 1E511E3B209768D41C8E0C27 /* MementoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9E4A5611A3928C39F12C12C5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					7DBFFB6525C141D51791A22D = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8EB40AAA23B87849651360A9 /* Build configuration list for PBXProject "Memento" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 10A7CF48B0EF75FABA9837FB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7DBFFB6525C141D51791A22D /* Memento */,
+				FA36845DEDFB695B314AAB43 /* MementoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		66B203B4E5B328834217353A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCA8490820DB1EAB47DE574A /* AppFileStore.swift in Sources */,
+				C7A67EA8448A6635FE925322 /* AudioPlaybackController.swift in Sources */,
+				E05022FFD1CACCB07295C7B6 /* AudioRecordingService.swift in Sources */,
+				DD82B913A1BDFA7777E5C1AA /* AuthGateView.swift in Sources */,
+				13FD6D52694565C594DED3DB /* AuthSession.swift in Sources */,
+				3B1BBB2F445A7254A75CD592 /* ClipExtractionService.swift in Sources */,
+				C8B7B4C49556118FDD83E38E /* FlashbackGenerationService.swift in Sources */,
+				687BFA56F70EF2A8419B365E /* FlashbackOrchestrator.swift in Sources */,
+				5E8A06E57C697FC4086A70BC /* HighlightClip.swift in Sources */,
+				E6FC7C5F96CF9E0B21614CC7 /* HighlightWindowBuilder.swift in Sources */,
+				DCDF009C8C071B657B18BA5B /* HighlightsListView.swift in Sources */,
+				D25D24BA01EF7679F6F3D6A6 /* HomeView.swift in Sources */,
+				11F295B1449F5984F20C6A6F /* LaughterDetectionService.swift in Sources */,
+				255DD00F6B30FC53439F4416 /* LaughterEvent.swift in Sources */,
+				2B2ABD3FB2C0F1963E5B5E45 /* LaughterMarker.swift in Sources */,
+				4701162D41C7182ADBA8B5AF /* MementoApp.swift in Sources */,
+				DC06CA56FFBBF501CCF1E12C /* NotificationCoordinator.swift in Sources */,
+				AE14040713C8C06523A0A0DF /* RecorderView.swift in Sources */,
+				C1A4D7560173B886AED4857B /* RecorderViewModel.swift in Sources */,
+				EA17502C909583FCBC981BAE /* RecordingSession.swift in Sources */,
+				80A3A2A17332713C0A8C34FB /* RootView.swift in Sources */,
+				146F23CCA610609CE533B478 /* SettingsView.swift in Sources */,
+				9A7FCD5CD42F8EA63FF8DC3D /* UserSettings.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8F120409238A9AB19775401 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDBEC3C65CD151AD63803671 /* AppFileStoreTests.swift in Sources */,
+				07899E6CC1114CBF958835DA /* AuthSessionTests.swift in Sources */,
+				44C59EBF0AC51B56059A1CC2 /* FlashbackGenerationServiceTests.swift in Sources */,
+				5935E7CFBE80C7A0616ACAA0 /* FlashbackOrchestratorTests.swift in Sources */,
+				5908ABF7B662EC252A1288B0 /* HighlightWindowBuilderTests.swift in Sources */,
+				C245D4F48B1FE0E13CECB4A8 /* ModelURLTests.swift in Sources */,
+				571DB3B25911BDE34ED456C9 /* RecorderViewModelTests.swift in Sources */,
+				F1C13B0828C2AE48C03970CF /* TestModelStack.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		80499A894C8364CF92AF64D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7DBFFB6525C141D51791A22D /* Memento */;
+			targetProxy = B49E0421234475EC7CB58076 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1CFFA4FCCD53665C8DD5105F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		1D043BDAA08FBE01B9C1D952 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Memento/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaushikandra.Memento;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		375CB4CBF64D6EE921563002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		3DC6C57365428A75E74E8D67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Memento/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaushikandra.Memento;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9569345DD7076710357AE395 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaushikandra.MementoTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Memento.app/Memento";
+			};
+			name = Debug;
+		};
+		A474E2E693439B249E35789B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaushikandra.MementoTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Memento.app/Memento";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8EB40AAA23B87849651360A9 /* Build configuration list for PBXProject "Memento" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CFFA4FCCD53665C8DD5105F /* Debug */,
+				375CB4CBF64D6EE921563002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AF51F97FC212804BB4E6DC5C /* Build configuration list for PBXNativeTarget "MementoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9569345DD7076710357AE395 /* Debug */,
+				A474E2E693439B249E35789B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FBF22FEFD5380AD9FAE8434E /* Build configuration list for PBXNativeTarget "Memento" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DC6C57365428A75E74E8D67 /* Debug */,
+				1D043BDAA08FBE01B9C1D952 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9E4A5611A3928C39F12C12C5 /* Project object */;
+}
