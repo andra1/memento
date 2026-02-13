@@ -3,16 +3,27 @@ import Foundation
 
 @MainActor
 final class AudioRecordingService {
-    private enum RecordingMode {
-        case engine
-        case fallback
+    enum RecordingError: LocalizedError {
+        case permissionDenied
+        case microphoneUnavailable
+        case failedToStart(Error)
+
+        var errorDescription: String? {
+            switch self {
+            case .permissionDenied:
+                return "Microphone access is denied. Enable it in Settings and try again."
+            case .microphoneUnavailable:
+                return "Microphone input is unavailable on this device."
+            case let .failedToStart(error):
+                return "Unable to start microphone capture: \(error.localizedDescription)"
+            }
+        }
     }
 
     private let engine = AVAudioEngine()
     private var recordingFile: AVAudioFile?
     private(set) var isRecording = false
     private var startedAt: Date?
-    private var recordingMode: RecordingMode?
 
     var currentDuration: TimeInterval {
         guard let startedAt else { return 0 }
@@ -38,15 +49,24 @@ final class AudioRecordingService {
         onBuffer: @escaping (AVAudioPCMBuffer, AVAudioTime) -> Void
     ) throws {
         let session = AVAudioSession.sharedInstance()
-        try session.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker])
+        guard session.recordPermission == .granted else {
+            throw RecordingError.permissionDenied
+        }
+
+        try session.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker, .allowBluetooth])
         try session.setActive(true)
+        guard session.isInputAvailable else {
+            throw RecordingError.microphoneUnavailable
+        }
 
         let inputNode = engine.inputNode
         let inputFormat = inputNode.outputFormat(forBus: 0)
         guard inputFormat.sampleRate > 0, inputFormat.channelCount > 0 else {
-            try startFallbackRecording(to: outputURL)
-            return
+            throw RecordingError.microphoneUnavailable
         }
+
+        engine.stop()
+        engine.reset()
         recordingFile = try AVAudioFile(forWriting: outputURL, settings: inputFormat.settings)
 
         inputNode.removeTap(onBus: 0)
@@ -62,32 +82,12 @@ final class AudioRecordingService {
         do {
             engine.prepare()
             try engine.start()
-            recordingMode = .engine
-            isRecording = true
-            startedAt = Date()
         } catch {
             inputNode.removeTap(onBus: 0)
-            try startFallbackRecording(to: outputURL)
+            recordingFile = nil
+            try? session.setActive(false, options: .notifyOthersOnDeactivation)
+            throw RecordingError.failedToStart(error)
         }
-    }
-
-    private func startFallbackRecording(to outputURL: URL) throws {
-        let fallbackFormat = AVAudioFormat(standardFormatWithSampleRate: 44_100, channels: 1)!
-        recordingFile = try AVAudioFile(forWriting: outputURL, settings: fallbackFormat.settings)
-
-        if let silenceBuffer = AVAudioPCMBuffer(pcmFormat: fallbackFormat, frameCapacity: 441) {
-            silenceBuffer.frameLength = 441
-            if let channelData = silenceBuffer.floatChannelData {
-                for channel in 0 ..< Int(fallbackFormat.channelCount) {
-                    for frame in 0 ..< Int(silenceBuffer.frameLength) {
-                        channelData[channel][frame] = 0
-                    }
-                }
-            }
-            try recordingFile?.write(from: silenceBuffer)
-        }
-
-        recordingMode = .fallback
         isRecording = true
         startedAt = Date()
     }
@@ -95,16 +95,16 @@ final class AudioRecordingService {
     func stopRecording() {
         guard isRecording else { return }
 
-        if recordingMode == .engine {
-            engine.inputNode.removeTap(onBus: 0)
+        engine.inputNode.removeTap(onBus: 0)
+        if engine.isRunning {
             engine.stop()
         }
+        engine.reset()
 
         recordingFile = nil
         startedAt = nil
         isRecording = false
-        recordingMode = nil
 
-        try? AVAudioSession.sharedInstance().setActive(false)
+        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
     }
 }

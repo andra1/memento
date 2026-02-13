@@ -1,7 +1,9 @@
 import SwiftUI
+import UIKit
 
 struct RecorderView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.openURL) private var openURL
     @StateObject private var viewModel = RecorderViewModel()
 
     var body: some View {
@@ -15,8 +17,18 @@ struct RecorderView: View {
         }
         .navigationTitle("Record")
         .alert("Recorder", isPresented: errorAlertBinding, actions: {
+            if viewModel.shouldShowSettingsShortcut {
+                Button("Open Settings") {
+                    if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                        openURL(settingsURL)
+                    }
+                    viewModel.errorMessage = nil
+                    viewModel.shouldShowSettingsShortcut = false
+                }
+            }
             Button("OK") {
                 viewModel.errorMessage = nil
+                viewModel.shouldShowSettingsShortcut = false
             }
         }, message: {
             Text(viewModel.errorMessage ?? "")
@@ -102,6 +114,7 @@ struct RecorderView: View {
             set: { isPresented in
                 if !isPresented {
                     viewModel.errorMessage = nil
+                    viewModel.shouldShowSettingsShortcut = false
                 }
             }
         )

@@ -14,6 +14,8 @@ targets:
       - Memento
     info:
       path: Memento/Info.plist
+      properties:
+        NSMicrophoneUsageDescription: Memento needs microphone access to record conversations and detect laughter highlights.
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.kaushikandra.Memento

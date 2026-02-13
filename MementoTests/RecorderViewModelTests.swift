@@ -79,7 +79,8 @@ final class RecorderViewModelTests: XCTestCase {
         await viewModel.startRecording(context: stack.context)
 
         XCTAssertFalse(viewModel.isRecording)
-        XCTAssertEqual(viewModel.errorMessage, "Microphone permission is required to record conversations.")
+        XCTAssertEqual(viewModel.errorMessage, "Microphone access is denied. Enable it in Settings > Privacy & Security > Microphone for Memento.")
+        XCTAssertTrue(viewModel.shouldShowSettingsShortcut)
         XCTAssertFalse(recording.didStart)
         XCTAssertEqual(try stack.context.fetch(FetchDescriptor<RecordingSession>()).count, 0)
     }

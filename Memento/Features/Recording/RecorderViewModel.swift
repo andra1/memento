@@ -26,11 +26,13 @@ final class RecorderViewModel: ObservableObject {
     @Published private(set) var isRecording = false
     @Published private(set) var elapsedTime: TimeInterval = 0
     @Published private(set) var markers: [LaughterMarker] = []
+    @Published var shouldShowSettingsShortcut = false
     @Published var errorMessage: String?
 
     private let recordingService: AudioRecordingServicing
     private let laughterService: LaughterDetectionServicing
     private let flashbackService: FlashbackGenerationServicing
+    private let isRecordPermissionDenied: () -> Bool
     private let makeRecordingURL: () throws -> URL
 
     private var activeSession: RecordingSession?
@@ -41,11 +43,15 @@ final class RecorderViewModel: ObservableObject {
         recordingService: AudioRecordingServicing = AudioRecordingService(),
         laughterService: LaughterDetectionServicing = LaughterDetectionService(),
         flashbackService: FlashbackGenerationServicing = FlashbackGenerationService(),
+        isRecordPermissionDenied: @escaping () -> Bool = {
+            AVAudioApplication.shared.recordPermission == .denied
+        },
         makeRecordingURL: @escaping () throws -> URL = { try AppFileStore.newRecordingURL() }
     ) {
         self.recordingService = recordingService
         self.laughterService = laughterService
         self.flashbackService = flashbackService
+        self.isRecordPermissionDenied = isRecordPermissionDenied
         self.makeRecordingURL = makeRecordingURL
 
         laughterService.onLaughterDetected = { [weak self] offset, confidence in
@@ -59,10 +65,17 @@ final class RecorderViewModel: ObservableObject {
     func startRecording(context: ModelContext) async {
         guard !isRecording else { return }
         modelContext = context
+        errorMessage = nil
+        shouldShowSettingsShortcut = false
 
         let granted = await recordingService.requestRecordPermission()
         guard granted else {
-            errorMessage = "Microphone permission is required to record conversations."
+            if isRecordPermissionDenied() {
+                errorMessage = "Microphone access is denied. Enable it in Settings > Privacy & Security > Microphone for Memento."
+                shouldShowSettingsShortcut = true
+            } else {
+                errorMessage = "Microphone permission is required to record conversations."
+            }
             return
         }
 
@@ -85,6 +98,10 @@ final class RecorderViewModel: ObservableObject {
         } catch {
             recordingService.stopRecording()
             activeSession = nil
+            if let recordingError = error as? AudioRecordingService.RecordingError,
+               case .permissionDenied = recordingError {
+                shouldShowSettingsShortcut = true
+            }
             let description = (error as? LocalizedError)?.errorDescription ?? error.localizedDescription
             errorMessage = "Could not start recording: \(description)"
             isRecording = false
@@ -106,6 +123,7 @@ final class RecorderViewModel: ObservableObject {
             try context.save()
             _ = try await flashbackService.generateHighlights(for: session, context: context)
         } catch {
+            shouldShowSettingsShortcut = false
             errorMessage = "Recording saved, but highlight generation failed."
         }
 

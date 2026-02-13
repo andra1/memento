@@ -13,6 +13,7 @@
 		146F23CCA610609CE533B478 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFED36D5BC1C052EC61354E /* SettingsView.swift */; };
 		255DD00F6B30FC53439F4416 /* LaughterEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A12C991878034A32CF12A2 /* LaughterEvent.swift */; };
 		2B2ABD3FB2C0F1963E5B5E45 /* LaughterMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098855BC89F7360331658A6F /* LaughterMarker.swift */; };
+		31CD8D404A85FDD8AE4EA7D0 /* InfoPlistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6DD115131248B567AC2F99 /* InfoPlistTests.swift */; };
 		3B1BBB2F445A7254A75CD592 /* ClipExtractionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295C81F9B6A54CF0ED5B35D7 /* ClipExtractionService.swift */; };
 		44C59EBF0AC51B56059A1CC2 /* FlashbackGenerationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3493544C5728D6559CD9E571 /* FlashbackGenerationServiceTests.swift */; };
 		4701162D41C7182ADBA8B5AF /* MementoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C842F2382CBAE9ACE8ABCF /* MementoApp.swift */; };
@@ -81,6 +82,7 @@
 		B957F75D4674C44DF1F590E8 /* RecorderViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderViewModelTests.swift; sourceTree = "<group>"; };
 		C6881DFF50047A761FE6CC33 /* RecorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderView.swift; sourceTree = "<group>"; };
 		C7A488088C373CB67040E034 /* RecordingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingSession.swift; sourceTree = "<group>"; };
+		CE6DD115131248B567AC2F99 /* InfoPlistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPlistTests.swift; sourceTree = "<group>"; };
 		E0C842F2382CBAE9ACE8ABCF /* MementoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoApp.swift; sourceTree = "<group>"; };
 		F92A536451F8DAA2F9002D85 /* AuthGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGateView.swift; sourceTree = "<group>"; };
 		F9E2545E20F7351F7925FCB6 /* AudioPlaybackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlaybackController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				3493544C5728D6559CD9E571 /* FlashbackGenerationServiceTests.swift */,
 				23734B7CB4D3F7A42EE57886 /* FlashbackOrchestratorTests.swift */,
 				2BAE38BE06A7BF88F272125A /* HighlightWindowBuilderTests.swift */,
+				CE6DD115131248B567AC2F99 /* InfoPlistTests.swift */,
 				B301162A305CFC3FDFAD9D3E /* ModelURLTests.swift */,
 				B957F75D4674C44DF1F590E8 /* RecorderViewModelTests.swift */,
 				716521181C57BA7087591258 /* TestModelStack.swift */,
@@ -351,6 +354,7 @@
 				44C59EBF0AC51B56059A1CC2 /* FlashbackGenerationServiceTests.swift in Sources */,
 				5935E7CFBE80C7A0616ACAA0 /* FlashbackOrchestratorTests.swift in Sources */,
 				5908ABF7B662EC252A1288B0 /* HighlightWindowBuilderTests.swift in Sources */,
+				31CD8D404A85FDD8AE4EA7D0 /* InfoPlistTests.swift in Sources */,
 				C245D4F48B1FE0E13CECB4A8 /* ModelURLTests.swift in Sources */,
 				571DB3B25911BDE34ED456C9 /* RecorderViewModelTests.swift in Sources */,
 				F1C13B0828C2AE48C03970CF /* TestModelStack.swift in Sources */,
