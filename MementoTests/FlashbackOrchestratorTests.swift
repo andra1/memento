@@ -3,8 +3,8 @@ import SwiftData
 import XCTest
 @testable import Memento
 
-@MainActor
 final class FlashbackOrchestratorTests: XCTestCase {
+    @MainActor
     private final class MockGenerator: FlashbackGenerationServicing {
         var generatedSessionIDs: [UUID] = []
 
@@ -38,6 +38,7 @@ final class FlashbackOrchestratorTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     func testSkipsWhenAlreadyGeneratedToday() async throws {
         let stack = try TestModelStack.make()
         let generator = MockGenerator()
@@ -57,6 +58,7 @@ final class FlashbackOrchestratorTests: XCTestCase {
         XCTAssertTrue(generator.generatedSessionIDs.isEmpty)
     }
 
+    @MainActor
     func testGeneratesOnlyForYesterdaySessionsWithoutHighlights() async throws {
         let stack = try TestModelStack.make()
         let generator = MockGenerator()
@@ -65,11 +67,20 @@ final class FlashbackOrchestratorTests: XCTestCase {
         let today = makeDate(year: 2026, month: 2, day: 13, hour: 8)
 
         let target = RecordingSession(startedAt: yesterday, audioFilePath: "/tmp/a.caf", duration: 12)
-        let laugh = LaughterEvent(timestampOffset: 2, confidence: 0.8, session: target)
-        target.laughterEvents.append(laugh)
-
         let noLaughter = RecordingSession(startedAt: yesterday, audioFilePath: "/tmp/b.caf", duration: 12)
         let alreadyHighlighted = RecordingSession(startedAt: yesterday, audioFilePath: "/tmp/c.caf", duration: 12)
+        let notYesterday = RecordingSession(startedAt: today, audioFilePath: "/tmp/d.caf", duration: 12)
+
+        stack.context.insert(target)
+        stack.context.insert(noLaughter)
+        stack.context.insert(alreadyHighlighted)
+        stack.context.insert(notYesterday)
+        try stack.context.save()
+
+        let laugh = LaughterEvent(timestampOffset: 2, confidence: 0.8, session: target)
+        target.laughterEvents.append(laugh)
+        stack.context.insert(laugh)
+
         let clip = HighlightClip(
             sourceStartOffset: 0,
             sourceEndOffset: 4,
@@ -78,17 +89,9 @@ final class FlashbackOrchestratorTests: XCTestCase {
             session: alreadyHighlighted
         )
         alreadyHighlighted.highlightClips.append(clip)
-
-        let notYesterday = RecordingSession(startedAt: today, audioFilePath: "/tmp/d.caf", duration: 12)
         let todayLaugh = LaughterEvent(timestampOffset: 1, confidence: 0.7, session: notYesterday)
         notYesterday.laughterEvents.append(todayLaugh)
-
-        stack.context.insert(target)
-        stack.context.insert(laugh)
-        stack.context.insert(noLaughter)
-        stack.context.insert(alreadyHighlighted)
         stack.context.insert(clip)
-        stack.context.insert(notYesterday)
         stack.context.insert(todayLaugh)
         try stack.context.save()
 

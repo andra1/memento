@@ -46,9 +46,11 @@ final class FlashbackGenerationServiceTests: XCTestCase {
         let extractor = MockClipExtractor()
         let service = FlashbackGenerationService(clipExtractor: extractor)
         let session = RecordingSession(audioFilePath: "/tmp/source.caf", duration: 30)
+        stack.context.insert(session)
+        try stack.context.save()
+
         let lowConfidence = LaughterEvent(timestampOffset: 10, confidence: 0.2, session: session)
         session.laughterEvents.append(lowConfidence)
-        stack.context.insert(session)
         stack.context.insert(lowConfidence)
         try stack.context.save()
 
@@ -64,9 +66,11 @@ final class FlashbackGenerationServiceTests: XCTestCase {
         let service = FlashbackGenerationService(clipExtractor: extractor)
 
         let session = RecordingSession(audioFilePath: "/tmp/source.caf", duration: 30)
+        stack.context.insert(session)
+        try stack.context.save()
+
         let laugh = LaughterEvent(timestampOffset: 8, confidence: 0.95, session: session)
         session.laughterEvents.append(laugh)
-        stack.context.insert(session)
         stack.context.insert(laugh)
         try stack.context.save()
 

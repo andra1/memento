@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -53,7 +53,7 @@
 /* Begin PBXFileReference section */
 		0843D743CE1555C18E7FA606 /* HighlightWindowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightWindowBuilder.swift; sourceTree = "<group>"; };
 		098855BC89F7360331658A6F /* LaughterMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaughterMarker.swift; sourceTree = "<group>"; };
-		0F15F89FBA7A9B167C552FE9 /* Memento.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Memento.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F15F89FBA7A9B167C552FE9 /* Memento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1610C7EEBCB7E350C3970049 /* NotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCoordinator.swift; sourceTree = "<group>"; };
 		1E511E3B209768D41C8E0C27 /* MementoTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MementoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		213870536375E838AEB6ABEB /* HighlightClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightClip.swift; sourceTree = "<group>"; };
@@ -302,7 +302,6 @@
 			);
 			mainGroup = 10A7CF48B0EF75FABA9837FB;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -439,6 +438,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N7KQV7R355;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Memento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -515,6 +515,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N7KQV7R355;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Memento/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
